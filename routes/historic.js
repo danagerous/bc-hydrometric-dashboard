@@ -1,7 +1,7 @@
 var express = require('express');
 var csv = require('csvtojson');
 var request = require('request')
-const sqlite3 = require('sqlite3').verbose();
+var sqlite3 = require('sqlite3').verbose();
 var router = express.Router();
 
 /* GET station info */
@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
       if (err) {
         throw err;
       }
-      dataJSON = []
+      var dataJSON = []
       rows.forEach((row) => {
         dataJSON.push(row);
       });

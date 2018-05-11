@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 
   if (type=='json'){
     getRealtime(station,function(d){
-      console.log(d);
+      //console.log(d);
       res.send(d);
     });  
   }
@@ -49,7 +49,7 @@ function getRealtime(station,callback){
     var dailyJson = dj;
     var hourlyJson;
     getCSV(hourlyurl,function(hj){
-      console.log(dailyJson);
+      //console.log(dailyJson);
       hourlyJson = hj;
       var firstHourlyDate = Date.parse(hourlyJson[0].Date);
       var cutIndex = 0;
